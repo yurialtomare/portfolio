@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Heebo", sans-serif;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+/*? Estilizando o HEADER */
+
+header {
+  background-color: #fff;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1200px; /* responsividade */
+  margin: 0 auto; /* 0 em cima e embaixo e automático dos lados */
+  padding: 0 2rem; /* rem: ajuda na responsividade das páginas. 1rem = 16px */
+  height: 5rem;
+}
+
+#nav-bar .nav-brand {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#nav-bar .nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+#nav-bar .nav-list .nav-item .nav-anchor {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#nav-bar .nav-list .nav-item .nav-anchor:hover {
+  color: #777;
+  transition: 0.3s;
+}
+
+#nav-bar .nav-list .nav-item .nav-anchor-blog {
+  color: #00a8cc;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#nav-bar .hamburguer {
+  display: none;
+}
+
+/*? Estilizando o MAIN: Section post-content */
+
+main {
+  margin-top: 6rem;
+}
+
+/*? Estilizando o FOOTER */
+
+footer {
+  margin-top: 5.18rem;
+  background-color: #fff;
+}
+
+#post-content {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+#post-content .post-title {
+  margin-bottom: 3.4rem;
+}
+
+#post-content .post-title .blog {
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+
+#post-content .post-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#post-content .post-content .post-h3 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #21243d;
+}
+
+#post-content .post-content .post-p-1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #21243d;
+}
+
+#post-content .post-content .post-p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #21243d;
+}
+
+#post-content .horizontal-row {
+  margin: 2rem 0;
+  border: 1px solid #e0e0e0;
+}
+
+#social-media {
+  max-width: 1200px; /* responsividade */
+  margin: 0 auto; /* 0 em cima e embaixo e automático dos lados */
+  padding: 0 2rem; /* rem: ajuda na responsividade das páginas. 1rem = 16px */
+}
+
+#social-media .content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 0;
+}
+
+#social-media .content-right .images {
+  display: flex;
+  gap: 2rem;
+}
+
+#social-media .content-right .rights {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}

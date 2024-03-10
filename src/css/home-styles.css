@@ -1,0 +1,336 @@
+/*! OBSERVAÇÃO: A página é FLEXÍVEL, ou seja, terá que se adaptar a diferentes resoluções. (desktop, laptop, smartphone)
+
+/*! RESPONSIVIDADE (Media Queries) : @media (Tamanho que a tela começa a expremer) {
+/*!  SECTION OU ID DE ESCOLA + A ESTILIZAÇÃO
+/*! } */
+
+/*! Teoricamente: enquanto a tela tiver até ___ px, quero que aplique essa estilização
+
+
+/* Antes de começar toda a esilização, devemos tirar todas as bordas, magins e paddings que já vem como padrão do navegador */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Determinando a fonte 'Heebo' será usada em toda a página */
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: "Heebo", sans-serif;
+}
+
+/* Escolhendo a cor de fundo da página */
+
+body {
+  background-color: #f7f7f7;
+}
+
+/*? Estilizando o Header */
+
+header {
+  background-color: #fff;
+  height: 5rem;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: space-between; /* Para separar o nome das listas (deixando nos extremos) */
+  align-items: center; /* Alinhar VERTICALMENTE o conteúdo. */
+
+  max-width: 1200px; /* responsividade */
+  margin: 0 auto; /* 0 em cima e embaixo e automático dos lados */
+  padding: 0 2rem; /* rem: ajuda na responsividade das páginas. 1rem = 16px */
+  height: 5rem;
+}
+
+#nav-bar .nav-brand {
+  text-decoration: none; /* remove o sublinhado da tag âncora */
+  font-size: 1.5rem; /* tamanho RESPONSIVO da fonte (esquecer de usar pixels) */
+  font-weight: 700;
+  color: #333;
+}
+
+#nav-bar .nav-list {
+  list-style: none; /* remove os pontos da lista */
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+#nav-bar .nav-list .nav-item a {
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #333;
+}
+
+#nav-bar .hamburguer {
+  display: none; /*Para que o hamburguer menu desapareça quando não estiver em modo MOBILE*/
+}
+
+#nav-bar .nav-list .nav-item a:hover {
+  /* :HOVER : permite realizar DIVERSAS mudanças ao passar o mouse por cima */
+  color: #777;
+  transition: color 0.3s; /* ao especificar a transition (nesse caso é o 'color'), adiciona um delay ao mudar de uma cor para a outra */
+}
+
+@media (max-width: 480px) {
+  #nav-bar .nav-list {
+    display: none;
+  }
+
+  #nav-bar .hamburguer {
+    display: block;
+  }
+}
+
+/*? Estilizando a Section BANNER */
+
+main {
+  margin-top: 6rem;
+}
+
+section#banner {
+  display: flex;
+  justify-content: space-between;
+
+  /* esses estilos abaixo sempre são utilizados para centralizar o conteúdo, deixá-lo alinhado com o HEADER e deixá-lo responsivo */
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+#banner .banner-container .banner-title {
+  font-size: 2.75rem; /* Com o aumento da fonte, quebrou-se a linha, mas pode utilizar também o <br> */
+  font-weight: 700;
+  line-height: 3.75rem; /*Espaçamento entre as linhas adquirido no FIGMA */
+  margin-bottom: 2.5rem; /* Margem inferior: espaçamento EXTERNO INFERIOR para separar o H1 do parágrafo. */
+}
+
+#banner .banner-container .banner-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  /* para que o texto fique centralizado e não ocupando a página toda, utiliza-se o max-width. Nesse caso será 500px pq voi visto no FIGMA */
+  max-width: 31.25rem;
+  margin-bottom: 2.5rem;
+}
+
+#banner .banner-container .banner-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #00a8cc;
+  color: #fff;
+  border: none;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+#banner .banner-img {
+  /* Para deixar uma imagem redonda, utiliza-se 50% de border radius. 
+  OBS: A IMAGEM PRECISA SER QUADRADA */
+  border-radius: 50%;
+  width: 100%;
+  max-width: 20rem;
+}
+
+@media (max-width: 1020px) {
+  #banner {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+  }
+  #banner .banner-container {
+    text-align: center;
+  }
+}
+
+/*? Estilizando a Section POSTS */
+
+section#posts {
+  margin-top: 5rem;
+  background-color: #edf7fa;
+}
+
+#posts .posts-content {
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+#posts .posts-content .posts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+#posts .posts-content .posts-header .posts-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+#posts .posts-content .posts-header .link {
+  text-decoration: none;
+  color: #00a8cc;
+}
+
+#posts .posts-content .posts-header .link:hover {
+  color: #247b8f;
+  transition: color 0.3s;
+}
+
+#posts .posts-cards {
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+#posts .posts-cards .post-card {
+  background-color: #fff;
+  padding: 2rem 2rem;
+}
+
+#posts .posts-cards .post-card .post-h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 2.4rem;
+}
+
+#posts .posts-cards .post-card .post-span-1 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+#posts .posts-cards .post-card .post-span-2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 1002px) {
+  #posts .posts-cards {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/*? Estilizando a Section ANOTHER POSTS */
+
+section#another-posts {
+  margin-top: 5rem;
+}
+
+#another-posts .another-post .horizontal-row {
+  margin: 2rem 0;
+  border: 1px solid #e0e0e0;
+}
+
+#another-posts .another-post {
+  max-width: 1200px;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+#another-posts .another-post .post-header-2 {
+  margin-bottom: 2rem;
+}
+
+#another-posts .another-post .post-header-2 .post-title-2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+#another-posts .another-post .post-content {
+  display: flex;
+  gap: 0.625rem;
+}
+
+#another-posts .another-post .post-content .contentt {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  gap: 1.5rem;
+}
+
+#another-posts .another-post .post-content .post-p-2 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #21243d;
+}
+
+#another-posts .another-post .post-content .post-h3-2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #21243d;
+}
+
+#another-posts .another-post .post-content .border-year {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 900;
+  justify-content: center;
+
+  width: 4rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  color: #fff;
+  background-color: #142850;
+}
+
+@media (max-width: 1002px) {
+  #another-posts .another-post .post-header-2 .post-title-2 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  #another-posts .another-post .post-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #another-posts .another-post .post-content .contentt {
+    margin-top: 2rem;
+  }
+}
+
+/*? Esstilizando o FOOTER */
+
+footer {
+  background-color: #fff;
+  margin-top: 5.18rem;
+}
+
+#social-media {
+  max-width: 1200px; /* responsividade */
+  margin: 0 auto; /* 0 em cima e embaixo e automático dos lados */
+  padding: 0 2rem; /* rem: ajuda na responsividade das páginas. 1rem = 16px */
+}
+
+#social-media .content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 0;
+}
+
+#social-media .images {
+  display: flex;
+  gap: 2rem;
+}
+
+#social-media .rights {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+}
